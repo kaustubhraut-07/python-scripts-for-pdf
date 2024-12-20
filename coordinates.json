@@ -1,0 +1,32 @@
+[
+    {
+      "pageNumber": 1,
+      "x": 265,
+      "y": 176,
+      "text": "Tag 1"
+      
+    },
+    {
+      "pageNumber": 2,
+      "x": 282,
+      "y": 306,
+      "text": "Tag 3"
+      
+      
+    },
+    {
+      "pageNumber": 2,
+      "x": 222,
+      "y": 195,
+      "text": "Tag 2",
+      "textSize": 16
+     
+    },
+    {
+      "pageNumber": 10,
+      "x": 168,
+      "y": 364,
+      "text": "Tag 4"
+      
+    }
+  ]
