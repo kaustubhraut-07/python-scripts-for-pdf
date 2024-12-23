@@ -300,11 +300,11 @@ def create_overlay_pdf(text_positions, page_width, page_height):
 
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=(page_width, page_height))
-    print(text_positions , "text_positions")
+    # print(text_positions , "text_positions")
     for item in text_positions:
         # print(item , "Item")
         x, y, text = item['x'], item['y'], item['text']
-        can.drawString(x, y, text)
+        can.drawString(x, y, text if text is not None else "")
     
     can.save()
     packet.seek(0)
@@ -324,7 +324,7 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
     # Group positions by page for easy processing
     grouped_positions = {}
     for item in text_positions:
-        print(item , "in text_postion")
+        # print(item , "in text_postion")
         page_number = item['pageNumber'] -1 # Convert to 0-based index
         if page_number not in grouped_positions:
             grouped_positions[page_number] = []
@@ -342,7 +342,7 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
             
             if page_number in grouped_positions:
                 # Create overlay with reportlab
-                print(grouped_positions , "groupeddpotions")
+                # print(grouped_positions , "groupeddpotions" , page_number)
                 overlay_pdf_stream = create_overlay_pdf(
                     grouped_positions[page_number], page_width, page_height
                 )
@@ -358,6 +358,17 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
     # Save the final PDF
     with open(output_pdf_path, "wb") as output_file:
         writer.write(output_file)
+
+
+
+
+
+
+
+
+
+
+
 
 # Function to add tags to a PDF
 # def add_tags_to_pdf(input_pdf, output_pdf, tags, csv_row):
@@ -430,7 +441,7 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
 for idx, row in enumerate(rows):
     # Handle missing or empty 'Pages' field
     cleaned_row = {key.strip(): value for key, value in row.items()}
-    # print(cleaned_row , "csv Row")
+    print(cleaned_row , "csv Row")
 
     # Accessing the value associated with the key 'Pages'
     pages = cleaned_row.get('Pages', '')
@@ -451,14 +462,18 @@ for idx, row in enumerate(rows):
     subset_pdf = create_subset_pdf(pdf_input_path, pages_to_include)
 
     
-    filtered_tags = [tag for tag in json_data if tag["pageNumber"] in pages_to_include]
-    # print(filtered_tags, "filtered tags")
+    # filtered_tags = [tag for tag in json_data if tag["pageNumber"] in pages_to_include]
+    filtered_tags = [tag.copy() for tag in json_data if tag["pageNumber"] in pages_to_include]
+    # print(filtered_tags, "filtered tags 1")
     for tag in filtered_tags:
         # print(tag, "tag")
         tag_text = tag["text"]
+        # print(tag_text, "tag_text")
         tag["text"] = cleaned_row.get(tag_text, "") 
+        print(cleaned_row.get(tag_text, "") )
 
-    # print(filtered_tags, "filtered tags")
+    print(filtered_tags, "filtered tags")
+
 
     # Generate the output PDF path
     output_pdf_path = os.path.join(output_directory, f"output_file_{idx + 1}.pdf")
