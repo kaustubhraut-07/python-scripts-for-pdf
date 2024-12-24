@@ -303,7 +303,7 @@ def create_overlay_pdf(text_positions, page_width, page_height):
     # print(text_positions , "text_positions")
     for item in text_positions:
         # print(item , "Item")
-        x, y, text = item['x'], item['y'], item['text']
+        x, y, text = item['x'], letter[1] - item['y'], item['text']
         can.drawString(x, y, text if text is not None else "")
     
     can.save()
@@ -337,7 +337,7 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
             pdf_page = pdf.pages[page_number]  # Get page size from pdfplumber
             
             # Extract page dimensions
-            page_width = pdf_page.width
+            page_width =   pdf_page.width
             page_height = pdf_page.height
             
             if page_number in grouped_positions:
