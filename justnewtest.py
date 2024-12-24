@@ -306,7 +306,7 @@ def create_overlay_pdf(text_positions, page_width, page_height):
     # print(text_positions , "text_positions")
     print(letter, "letter")
     x_adjustment = 0  
-    y_adjustment = -38
+    y_adjustment = -35
 
     for item in text_positions:
         # print(item , "Item")
