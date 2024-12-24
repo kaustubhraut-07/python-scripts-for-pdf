@@ -9,7 +9,7 @@ endobj
 <<
 /Type /Pages
 /Count 3
-/Kids [ 4 0 R 10 0 R 14 0 R ]
+/Kids [ 4 0 R 8 0 R 11 0 R ]
 >>
 endobj
 3 0 obj
@@ -20,57 +20,48 @@ endobj
 endobj
 4 0 obj
 <<
-/Type /Page
 /Contents 5 0 R
+/MediaBox [ 0 0 612 792 ]
 /Resources <<
 /Font <<
 /F1 6 0 R
-/F25 7 0 R
-/F26 9 0 R
+/F1-0 7 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
-/MediaBox [ 0 0 595.27 841.89 ]
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
 /Annots [ ]
 /Parent 2 0 R
 >>
 endobj
 5 0 obj
 <<
-/Length 624
+/Length 298
 >>
 stream
 q
-1 0 0 1 81.96 735.02 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 388.54 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -298.27 -236.43 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 5.86 0 cm
-BT
-/F25 20.66 Tf 0 0 Td[(Sample)-250(PDF)-250(Document)]TJ/F26 14.35 Tf 57.7 -53.8 Td[(Robert)-249(Maron)]TJ -19.8 -17.93 Td[(Grze)16(gorz)-250(Grudzi)]TJ 97.78 0.14 Td[(´)]TJ -1.21 -0.14 Td[(nski)]TJ -89.12 -34.04 Td[(February)-249(20,)-250(1999)]TJ
-ET
-1 0 0 1 -96.13 -403.05 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 388.54 0 cm
-1 1 1 1 k 1 1 1 1 K
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT 1 0 0 1 100 750 Tm (This is page 1) Tj T* ET
+BT 1 0 0 1 100 700 Tm (Some sample content for page 1.) Tj T* ET
+ 
 
 Q
 
 q
-0.0 0.0 595.27 841.89 re
+0.0 0.0 612 792 re
 W
 n
 1 0 0 1 0 0 cm
 BT
-/F1 12 Tf
+/F1-0 12 Tf
 14.4 TL
 ET
 BT
-1 0 0 1 265 616 Tm
-(hi) Tj
+1 0 0 1 405 754 Tm
+(hi just cheking ranmdon tesxt here) Tj
 T*
 ET
 Q
@@ -89,73 +80,56 @@ endobj
 endobj
 7 0 obj
 <<
-/Type /Font
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
 /Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Roman
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/Type /Encoding
-/Differences [ 0 /.notdef 1 /dotaccent /fi /fl /fraction /hungarumlaut /Lslash /lslash /ogonek /ring 10 /.notdef 11 /breve /minus 13 /.notdef 14 /Zcaron /zcaron /caron /dotlessi /dotlessj /ff /ffi /ffl 22 /.notdef 30 /grave /quotesingle /space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash /zero /one /two /three /four /five /six /seven /eight /nine /colon /semicolon /less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K /L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore /quoteleft /a /b /c /d /e /f /g /h /i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar /braceright /asciitilde 127 /.notdef 130 /quotesinglbase /florin /quotedblbase /ellipsis /dagger /daggerdbl /circumflex /perthousand /Scaron /guilsinglleft /OE 141 /.notdef 147 /quotedblleft /quotedblright /bullet /endash /emdash /tilde /trademark /scaron /guilsinglright /oe 157 /.notdef 159 /Ydieresis 160 /.notdef 161 /exclamdown /cent /sterling /currency /yen /brokenbar /section /dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron /degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered /cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis ]
->>
-endobj
-9 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Roman
->>
-endobj
-10 0 obj
-<<
-/Type /Page
-/Contents 11 0 R
+/Contents 9 0 R
+/MediaBox [ 0 0 612 792 ]
 /Resources <<
 /Font <<
-/F1 12 0 R
-/F28 13 0 R
+/F1 6 0 R
+/F1-0 10 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
-/MediaBox [ 0 0 595.27 841.89 ]
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
 /Annots [ ]
 /Parent 2 0 R
 >>
 endobj
-11 0 obj
+9 0 obj
 <<
-/Length 327
+/Length 272
 >>
 stream
 q
-1 0 0 1 123.81 735.02 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(2)]TJ
-ET
-1 0 0 1 388.54 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -388.54 -639.48 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 388.54 0 cm
-1 1 1 1 k 1 1 1 1 K
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT 1 0 0 1 100 750 Tm (This is page 2) Tj T* ET
+BT 1 0 0 1 100 700 Tm (Some sample content for page 2.) Tj T* ET
+ 
 
 Q
 
 q
-0.0 0.0 595.27 841.89 re
+0.0 0.0 612 792 re
 W
 n
 1 0 0 1 0 0 cm
 BT
-/F1 12 Tf
+/F1-0 12 Tf
 14.4 TL
 ET
 BT
-1 0 0 1 282 486 Tm
+1 0 0 1 282 448 Tm
 (thankyou) Tj
 T*
 ET
@@ -164,7 +138,7 @@ Q
 
 endstream
 endobj
-12 0 obj
+10 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -173,325 +147,50 @@ endobj
 /Type /Font
 >>
 endobj
-13 0 obj
+11 0 obj
 <<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Roman
->>
-endobj
-14 0 obj
-<<
-/Type /Page
-/Contents 15 0 R
+/Contents 12 0 R
+/MediaBox [ 0 0 612 792 ]
 /Resources <<
 /Font <<
-/F1 16 0 R
-/F28 13 0 R
-/F42 17 0 R
-/F43 18 0 R
-/F44 19 0 R
-/F45 20 0 R
+/F1 6 0 R
+/F1-0 13 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
-/MediaBox [ 0 0 595.27 841.89 ]
-/Annots [ 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R ]
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
 /Parent 2 0 R
 >>
 endobj
-15 0 obj
+12 0 obj
 <<
-/Length 7328
+/Length 298
 >>
 stream
 q
-1 0 0 1 81.96 735.02 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 388.54 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -388.54 -111.46 cm
-BT
-/F42 24.79 Tf 0 0 Td[(Contents)]TJ
-ET
-1 0 0 1 0 -66.25 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F43 11.96 Tf 0 0 Td[(1)-1000(T)93(emplate)]TJ
-ET
-1 0 0 1 65.31 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 317.26 0 cm
-BT
-/F43 11.96 Tf 0 0 Td[(5)]TJ
-ET
-1 0 0 1 -382.57 -2.5 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 17.93 -11.94 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.1)-1049(Ho)25(w)-250(to)-249(compile)-249(a)]TJ/F44 11.96 Tf 115.53 0 Td[(.tex)]TJ/F28 11.96 Tf 31.68 0 Td[(le)-249(to)-250(a)]TJ/F44 11.96 Tf 38.85 0 Td[(.pdf)]TJ/F28 11.96 Tf 31.68 0 Td[(le)]TJ
-ET
-1 0 0 1 233.02 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 3.1 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)]TJ
-ET
-1 0 0 1 128.52 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(5)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.1.1)-1199(T)80(ools)]TJ
-ET
-1 0 0 1 64.54 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 9.58 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 263.02 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(5)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.1.2)-1199(Ho)26(w)-250(to)-250(use)-249(the)-249(tools)]TJ
-ET
-1 0 0 1 136.25 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 9.6 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)]TJ
-ET
-1 0 0 1 191.29 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(5)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -370.61 -14.44 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.2)-1049(Ho)25(w)-250(to)-249(write)-249(a)-250(document)]TJ
-ET
-1 0 0 1 148.73 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 6.69 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)]TJ
-ET
-1 0 0 1 209.22 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(6)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.2.1)-1199(The)-249(main)-249(document)]TJ
-ET
-1 0 0 1 133.89 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 3 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)]TJ
-ET
-1 0 0 1 200.25 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(6)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.44 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.2.2)-1199(Chapters)]TJ
-ET
-1 0 0 1 80.76 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 11.29 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 245.09 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(6)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.2.3)-1199(Spell-checking)]TJ
-ET
-1 0 0 1 109.98 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 8.97 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)]TJ
-ET
-1 0 0 1 218.19 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(6)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -370.61 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.3)-1049(L)]TJ/F45 7.97 Tf 30.5 2.38 Td[(A)]TJ/F28 11.96 Tf 3.96 -2.38 Td[(T)]TJ 5.32 -2.69 Td[(E)]TJ 5.81 2.69 Td[(X)-249(and)-250(pdfL)]TJ/F45 7.97 Tf 50.8 2.38 Td[(A)]TJ/F28 11.96 Tf 3.97 -2.38 Td[(T)]TJ 5.31 -2.69 Td[(E)]TJ 5.81 2.69 Td[(X)-249(capabilities)]TJ
-ET
-1 0 0 1 177.55 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 4.77 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)]TJ
-ET
-1 0 0 1 182.32 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(7)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.44 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.3.1)-1199(Ov)16(ervie)25(w)]TJ
-ET
-1 0 0 1 84.92 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 7.13 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 245.09 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(7)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.3.2)-1199(L)]TJ/F45 7.97 Tf 41.26 2.38 Td[(A)]TJ/F28 11.96 Tf 3.96 -2.38 Td[(T)]TJ 5.31 -2.69 Td[(E)]TJ 5.81 2.69 Td[(X)]TJ
-ET
-1 0 0 1 64.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 9.15 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 263.02 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(7)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.44 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.3.3)-1199(pdfL)]TJ/F45 7.97 Tf 57.19 2.38 Td[(A)]TJ/F28 11.96 Tf 3.97 -2.38 Td[(T)]TJ 5.31 -2.69 Td[(E)]TJ 5.81 2.69 Td[(X)]TJ
-ET
-1 0 0 1 80.91 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 11.14 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 245.09 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(7)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -343.11 -14.45 cm
-1 0 0 rg 1 0 0 RG
-BT
-/F28 11.96 Tf 0 0 Td[(1.3.4)-1199(Examples)]TJ
-ET
-1 0 0 1 85.41 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 6.64 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-499(.)-500(.)-500(.)-500(.)-499(.)-500(.)-500(.)]TJ
-ET
-1 0 0 1 245.09 0 cm
-1 1 1 1 k 1 1 1 1 K
-BT
-/F28 11.96 Tf 0 0 Td[(7)]TJ
-ET
-1 0 0 1 5.97 0 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 -388.54 -288.42 cm
-1 1 1 1 k 1 1 1 1 K
-1 0 0 1 191.28 0 cm
-BT
-/F28 11.96 Tf 0 0 Td[(3)]TJ
-ET
-1 0 0 1 197.26 0 cm
-1 1 1 1 k 1 1 1 1 K
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT 1 0 0 1 100 750 Tm (This is page 3) Tj T* ET
+BT 1 0 0 1 100 700 Tm (Some sample content for page 3.) Tj T* ET
+ 
 
 Q
 
 q
-0.0 0.0 595.27 841.89 re
+0.0 0.0 612 792 re
 W
 n
 1 0 0 1 0 0 cm
 BT
-/F1 12 Tf
+/F1-0 12 Tf
 14.4 TL
 ET
 BT
-1 0 0 1 300 592 Tm
-(hi) Tj
+1 0 0 1 164 334 Tm
+(hi just cheking ranmdon tesxt here) Tj
 T*
 ET
 Q
@@ -499,7 +198,7 @@ Q
 
 endstream
 endobj
-16 0 obj
+13 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -508,262 +207,28 @@ endobj
 /Type /Font
 >>
 endobj
-17 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Bold
->>
-endobj
-18 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Bold
->>
-endobj
-19 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Courier
->>
-endobj
-20 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/Encoding 8 0 R
-/BaseFont /Times-Roman
->>
-endobj
-21 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 81.96 554.81 147.27 565.55 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (chapter\0561)
->>
->>
-endobj
-22 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 99.9 540.27 332.91 550.97 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (section\0561\0561)
->>
->>
-endobj
-23 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 528.25 191.93 536.53 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0561\0561)
->>
->>
-endobj
-24 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 513.81 263.64 522.08 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0561\0562)
->>
->>
-endobj
-25 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 99.9 499.36 248.62 507.63 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (section\0561\0562)
->>
->>
-endobj
-26 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 484.91 261.28 493.19 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0562\0561)
->>
->>
-endobj
-27 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 468.04 208.15 478.74 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0562\0562)
->>
->>
-endobj
-28 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 453.59 237.37 464.3 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0562\0563)
->>
->>
-endobj
-29 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 99.9 439.05 277.44 449.85 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (section\0561\0563)
->>
->>
-endobj
-30 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 427.13 212.31 435.4 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0563\0561)
->>
->>
-endobj
-31 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 410.16 192.36 420.96 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0563\0562)
->>
->>
-endobj
-32 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 395.72 208.3 406.51 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0563\0563)
->>
->>
-endobj
-33 0 obj
-<<
-/Type /Annot
-/Border [ 0 0 0 ]
-/H /I
-/C [ 1 0 0 ]
-/Rect [ 127.39 381.36 212.8 392.07 ]
-/Subtype /Link
-/A <<
-/S /GoTo
-/D (subsection\0561\0563\0564)
->>
->>
-endobj
 xref
-0 34
+0 14
 0000000000 65535 f 
 0000000015 00000 n 
 0000000054 00000 n 
-0000000127 00000 n 
-0000000176 00000 n 
-0000000392 00000 n 
-0000001067 00000 n 
-0000001174 00000 n 
-0000001262 00000 n 
-0000003291 00000 n 
-0000003379 00000 n 
-0000003588 00000 n 
-0000003967 00000 n 
-0000004075 00000 n 
-0000004164 00000 n 
-0000004512 00000 n 
-0000011893 00000 n 
-0000012001 00000 n 
-0000012089 00000 n 
-0000012177 00000 n 
-0000012262 00000 n 
-0000012351 00000 n 
-0000012511 00000 n 
-0000012675 00000 n 
-0000012849 00000 n 
-0000013023 00000 n 
-0000013187 00000 n 
-0000013361 00000 n 
-0000013535 00000 n 
-0000013708 00000 n 
-0000013872 00000 n 
-0000014045 00000 n 
-0000014219 00000 n 
-0000014392 00000 n 
+0000000126 00000 n 
+0000000175 00000 n 
+0000000398 00000 n 
+0000000747 00000 n 
+0000000854 00000 n 
+0000000961 00000 n 
+0000001185 00000 n 
+0000001508 00000 n 
+0000001616 00000 n 
+0000001842 00000 n 
+0000002192 00000 n 
 trailer
 <<
-/Size 34
+/Size 14
 /Root 3 0 R
 /Info 1 0 R
 >>
 startxref
-14565
+2300
 %%EOF

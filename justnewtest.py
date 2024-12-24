@@ -238,7 +238,7 @@ import io
 import json
 import csv
 import os
-
+from reportlab.lib.units import inch
 # Load the JSON data from frontend
 # json_data = [
 #     {"pageNumber": 1, "x": 265, "y": 176, "text": "Tag 1"},
@@ -247,22 +247,23 @@ import os
 #     {"pageNumber": 10, "x": 168, "y": 364, "text": "Tag 4"}
 # ]
 json_data = [
-    {"pageNumber": 1, "x": 265, "y": 176, "text": "Tag 1"},
+    {"pageNumber": 1, "x": 405, "y": 0, "text": "Tag 1"},
     # {"pageNumber": 1, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
     {"pageNumber": 2, "x": 282, "y": 306, "text": "Tag 3"},
     # {"pageNumber": 2, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
-    {"pageNumber": 3, "x": 300, "y": 200, "text": "Tag 1"},
+    {"pageNumber": 3, "x": 164, "y": 420, "text": "Tag 1"},
     # {"pageNumber": 3, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
     {"pageNumber": 9, "x": 325, "y": 192, "text": "Tag 1"},
     {"pageNumber": 9, "x": 222, "y": 195, "text": "Tag 2"},
-    {"pageNumber": 10, "x": 168, "y": 364, "text": "Tag 4"}
+    {"pageNumber": 10, "x": 320, "y": 224, "text": "Tag 4"}
 ]
 
 
 
 # Path to the input files
 csv_file_path = "New Csv Format - Sheet1.csv"
-pdf_input_path = "sample.pdf"
+# pdf_input_path = "sample.pdf"
+pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 
 # Ensure output directory exists
@@ -300,11 +301,27 @@ def create_overlay_pdf(text_positions, page_width, page_height):
 
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=(page_width, page_height))
+    # can = canvas.Canvas(packet, pagesize=(page_width * inch, page_height * inch))
+   
     # print(text_positions , "text_positions")
+    print(letter, "letter")
+    x_adjustment = 0  
+    y_adjustment = -38
+
     for item in text_positions:
         # print(item , "Item")
-        x, y, text = item['x'], letter[1] - item['y'], item['text']
-        can.drawString(x, y, text if text is not None else "")
+        print(item['x'], item['y'], letter[1] - item['y'], item['text'])
+        x, y, text = item['x'], letter[1] -  item['y'], item['text']
+        # x, y, text = item['x'], item['y'], item['text']
+        # y = page_height - y
+        # print(y , "y value")
+        adjusted_x = x + x_adjustment
+        adjusted_y = y + y_adjustment
+
+        # can.drawString(x, y, text if text is not None else "")
+        can.drawString(adjusted_x, adjusted_y, text if text is not None else "")
+        # can.drawString(x * inch, page_height * inch - y * inch, text if text is not None else "") # Changed line
+
     
     can.save()
     packet.seek(0)
@@ -332,17 +349,25 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
     
     # Open pdfplumber to read page dimensions
     with pdfplumber.open(input_pdf_path) as pdf:
+        # for page in pdf.pages:
+        #     print(page.bbox , "pdf bbox" )
         for page_number in range(len(reader.pages)):
             page = reader.pages[page_number]
             pdf_page = pdf.pages[page_number]  # Get page size from pdfplumber
-            
+            print(pdf_page.bbox[3] , "pdf page bbox" )
+            # adjexted_y = page.bbox
             # Extract page dimensions
             page_width =   pdf_page.width
             page_height = pdf_page.height
+
+            # page_width = float(page.mediabox.width)
+            # page_height = float(page.mediabox.height)
             
             if page_number in grouped_positions:
                 # Create overlay with reportlab
                 # print(grouped_positions , "groupeddpotions" , page_number)
+                
+                # print(adjexted_y , "adjexted_y")
                 overlay_pdf_stream = create_overlay_pdf(
                     grouped_positions[page_number], page_width, page_height
                 )
