@@ -268,8 +268,8 @@ json_data = [
 # Path to the input files
 csv_file_path = "New Csv Format - Sheet1.csv"
 # pdf_input_path = "sample.pdf"
-# pdf_input_path = "House-Warming-Invitation-Card (1).pdf"
-pdf_input_path = "dummy_10_pages.pdf"
+pdf_input_path = "House-Warming-Invitation-Card (1).pdf"
+# pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 
 # Ensure output directory exists
@@ -281,6 +281,33 @@ with open(csv_file_path, 'r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         rows.append(row)
+
+
+def normalize_coordinates(x, y, standard_width, standard_height, actual_width, actual_height):
+    """
+    Normalize the coordinates to a standard size and then scale to the actual size.
+    :param x: Original x coordinate.
+    :param y: Original y coordinate.
+    :param standard_width: Width of the standard size.
+    :param standard_height: Height of the standard size.
+    :param actual_width: Width of the actual page.
+    :param actual_height: Height of the actual page.
+    :return: Scaled x and y coordinates.
+    """
+    aspect_ratio_standard = standard_width / standard_height
+    aspect_ratio_actual = actual_width / actual_height
+
+    if aspect_ratio_standard > aspect_ratio_actual:
+        scale_factor = actual_width / standard_width
+        normalized_x = x * scale_factor
+        normalized_y = y * scale_factor
+    else:
+        scale_factor = actual_height / standard_height
+        normalized_x = x * scale_factor
+        normalized_y = y * scale_factor
+
+    print(normalized_x, normalized_y, "normalized x and y")
+    return normalized_x, normalized_y
 
 # Function to create a subset PDF
 def create_subset_pdf(input_pdf, pages_to_include):
@@ -310,8 +337,12 @@ def create_overlay_pdf(text_positions, page_width, page_height):
     can = canvas.Canvas(packet, pagesize=(page_width, page_height))
     # can = canvas.Canvas(packet, pagesize=(page_width * inch, page_height * inch))
     print(page_width , page_height , "with and heith")
+
+
     # 2480.0 3508.0 with and heith  client pdf
     # 612 792 with and heith dummy pdf
+    # 595.27 841.89 with and heith sample pdf 
+
     # print(text_positions , "text_positions")
     print(letter, "letter")
     x_adjustment = 0  
@@ -321,6 +352,7 @@ def create_overlay_pdf(text_positions, page_width, page_height):
 
     can.setFont('Helvetica', 35) 
 
+    standard_width, standard_height = letter
 
     for item in text_positions:
         # print(item , "Item")
@@ -329,10 +361,15 @@ def create_overlay_pdf(text_positions, page_width, page_height):
         x, y, text = item['x'], item['y'], item['text']
         # y = page_height - y
         # print(y , "y value")
-        adjusted_x = x + x_adjustment
-        adjusted_y = y + y_adjustment
+        normalized_x, normalized_y = normalize_coordinates(x, y, standard_width, standard_height, page_width, page_height)
+        # adjusted_x = normalized_x + x_adjustment
+        # adjusted_y = normalized_y + y_adjustment
 
-        can.drawString(x, y, text if text is not None else "")
+        # adjusted_x = x + x_adjustment
+        # adjusted_y = y + y_adjustment
+# 
+        # can.drawString(x, y, text if text is not None else "")
+        can.drawString(normalized_x, normalized_y, text if text is not None else "")
         # can.drawString(adjusted_x, adjusted_y, text if text is not None else "")
         # can.drawString(x * inch, page_height * inch - y * inch, text if text is not None else "") # Changed line
 
