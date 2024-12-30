@@ -239,6 +239,8 @@ import json
 import csv
 import os
 from reportlab.lib.units import inch
+from reportlab.lib.colors import white, black
+
 # Load the JSON data from frontend
 # json_data = [
 #     {"pageNumber": 1, "x": 265, "y": 176, "text": "Tag 1"},
@@ -247,15 +249,18 @@ from reportlab.lib.units import inch
 #     {"pageNumber": 10, "x": 168, "y": 364, "text": "Tag 4"}
 # ]
 json_data = [
-    {"pageNumber": 1, "x": 405, "y": 0, "text": "Tag 1"},
-    # {"pageNumber": 1, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
-    {"pageNumber": 2, "x": 282, "y": 306, "text": "Tag 3"},
-    # {"pageNumber": 2, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
-    {"pageNumber": 3, "x": 164, "y": 420, "text": "Tag 1"},
-    # {"pageNumber": 3, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
-    {"pageNumber": 9, "x": 325, "y": 192, "text": "Tag 1"},
-    {"pageNumber": 9, "x": 222, "y": 195, "text": "Tag 2"},
-    {"pageNumber": 10, "x": 320, "y": 224, "text": "Tag 4"}
+    {"pageNumber": 1, "x": 303, "y": 180, "text": "Tag 1"},
+    # {"pageNumber": 1, "x": 422, "y": 756, "text": "Tag 1"},
+    #  {"pageNumber": 1, "x": 0, "y": 0, "text": "Tag 1"},
+    #   {"pageNumber": 1, "x": 0, "y": 754, "text": "Tag 1"},
+    # # {"pageNumber": 1, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
+    # {"pageNumber": 2, "x": 282, "y": 306, "text": "Tag 3"},
+    # # {"pageNumber": 2, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
+    # {"pageNumber": 3, "x": 164, "y": 420, "text": "Tag 1"},
+    # # {"pageNumber": 3, "x": 222, "y": 195, "text": "Tag 2", "textSize": 16},
+    # {"pageNumber": 9, "x": 325, "y": 192, "text": "Tag 1"},
+    # {"pageNumber": 9, "x": 222, "y": 195, "text": "Tag 2"},
+    # {"pageNumber": 10, "x": 320, "y": 224, "text": "Tag 4"}
 ]
 
 
@@ -263,6 +268,7 @@ json_data = [
 # Path to the input files
 csv_file_path = "New Csv Format - Sheet1.csv"
 # pdf_input_path = "sample.pdf"
+# pdf_input_path = "House-Warming-Invitation-Card (1).pdf"
 pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 
@@ -282,7 +288,8 @@ def create_subset_pdf(input_pdf, pages_to_include):
     writer = PdfWriter()
 
     for page_number in pages_to_include:
-        writer.add_page(reader.pages[page_number - 1])
+        if 1 <= page_number <= len(reader.pages):
+            writer.add_page(reader.pages[page_number - 1])
 
     subset_pdf_path = io.BytesIO()
     writer.write(subset_pdf_path)
@@ -302,24 +309,31 @@ def create_overlay_pdf(text_positions, page_width, page_height):
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=(page_width, page_height))
     # can = canvas.Canvas(packet, pagesize=(page_width * inch, page_height * inch))
-   
+    print(page_width , page_height , "with and heith")
+    # 2480.0 3508.0 with and heith  client pdf
+    # 612 792 with and heith dummy pdf
     # print(text_positions , "text_positions")
     print(letter, "letter")
     x_adjustment = 0  
     y_adjustment = -35
+    can.setFillColor(white)
+    # can.setFillColor(black)
+
+    can.setFont('Helvetica', 35) 
+
 
     for item in text_positions:
         # print(item , "Item")
-        print(item['x'], item['y'], letter[1] - item['y'], item['text'])
-        x, y, text = item['x'], letter[1] -  item['y'], item['text']
-        # x, y, text = item['x'], item['y'], item['text']
+        print(item['x'], item['y'], letter[1] - item['y'], item['text'] , "in for loop")
+        # x, y, text = item['x'], letter[1] -  item['y'], item['text']
+        x, y, text = item['x'], item['y'], item['text']
         # y = page_height - y
         # print(y , "y value")
         adjusted_x = x + x_adjustment
         adjusted_y = y + y_adjustment
 
-        # can.drawString(x, y, text if text is not None else "")
-        can.drawString(adjusted_x, adjusted_y, text if text is not None else "")
+        can.drawString(x, y, text if text is not None else "")
+        # can.drawString(adjusted_x, adjusted_y, text if text is not None else "")
         # can.drawString(x * inch, page_height * inch - y * inch, text if text is not None else "") # Changed line
 
     
@@ -480,7 +494,9 @@ for idx, row in enumerate(rows):
         # Include all pages if 'Pages' is empty
         # print("in else full pdf")
         with pdfplumber.open(pdf_input_path) as pdf:
-            pages_to_include = list(range(1, len(pdf.pages) + 1))
+            valid_pages = list(range(1, len(pdf.pages) + 1))
+            pages_to_include = [page for page in pages_to_include if page in valid_pages]
+
 
     # print(pages_to_include , "pages to include  ")
     # Create a subset PDF for the specific pages
