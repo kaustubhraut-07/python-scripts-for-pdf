@@ -306,8 +306,20 @@ def normalize_coordinates(x, y, standard_width, standard_height, actual_width, a
         normalized_x = x * scale_factor
         normalized_y = y * scale_factor
 
+    standard_width=800
+    standard_height=1100
+    x_standard = (x / standard_width) * standard_width
+    y_standard = (y / standard_height) * standard_height
+    print(x_standard,y_standard , "x and y standeared")
+    # Scaling from standard to original PDF
+    x_original = (x_standard / standard_width) * actual_width
+    y_original = (y_standard / standard_height) * actual_height
+    print(x_original , y_original , "x and y origfinal")
     print(normalized_x, normalized_y, "normalized x and y")
+
+
     return normalized_x, normalized_y
+    # return x_original,y_original
 
 # Function to create a subset PDF
 def create_subset_pdf(input_pdf, pages_to_include):
@@ -361,13 +373,18 @@ def create_overlay_pdf(text_positions, page_width, page_height):
         x, y, text = item['x'], item['y'], item['text']
         # y = page_height - y
         # print(y , "y value")
+        x_original, y_original = normalize_coordinates(
+            x, y, standard_width, standard_height, page_width, page_height
+        )
+
         normalized_x, normalized_y = normalize_coordinates(x, y, standard_width, standard_height, page_width, page_height)
         # adjusted_x = normalized_x + x_adjustment
         # adjusted_y = normalized_y + y_adjustment
 
-        # adjusted_x = x + x_adjustment
-        # adjusted_y = y + y_adjustment
-# 
+        adjusted_x = x + x_adjustment
+        adjusted_y = y + y_adjustment
+        # can.drawString(x_original, page_height - y_original, item['text'])  # Inverting  y for ReportLab
+
         # can.drawString(x, y, text if text is not None else "")
         can.drawString(normalized_x, normalized_y, text if text is not None else "")
         # can.drawString(adjusted_x, adjusted_y, text if text is not None else "")
@@ -417,7 +434,8 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
             if page_number in grouped_positions:
                 # Create overlay with reportlab
                 # print(grouped_positions , "groupeddpotions" , page_number)
-                
+                scaled_width = 800 
+                scaled_height = 1100 #taking this from frontend
                 # print(adjexted_y , "adjexted_y")
                 overlay_pdf_stream = create_overlay_pdf(
                     grouped_positions[page_number], page_width, page_height
