@@ -158,7 +158,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.colors import white, black
 
 json_data = [
-    {"pageNumber": 1, "x": 613, "y": 1099, "text": "Tag 1", "width": 800, "height": 1131.6129032258063},
+    {"pageNumber": 1, "x": 301, "y": 173, "text": "Tag 1", "width": 800, "height": 1131.6129032258063},
 ]
 
 csv_file_path = "New Csv Format - Sheet1.csv"
@@ -191,7 +191,7 @@ def create_blank_pdf_with_text(text_positions, json_width, json_height):
 
     for item in text_positions:
         x = item['x']
-        y =   item['y'] 
+        y =   letter[1] - item['y'] 
         text = item['text']
         
         # Draw the text
