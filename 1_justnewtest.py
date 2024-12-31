@@ -331,6 +331,128 @@
 
 
 
+# import pdfplumber
+# from reportlab.pdfgen import canvas
+# from reportlab.lib.pagesizes import letter
+# from pypdf import PdfWriter, PdfReader
+# import io
+# import json
+# import csv
+# import os
+# from reportlab.lib.units import inch
+# from reportlab.lib.colors import white, black
+
+# json_data = [
+#     {"pageNumber": 1, "x": 302, "y": 173, "text": "Tag 1"},  
+# ]
+# csv_file_path = "New Csv Format - Sheet1.csv"
+# pdf_input_path = "House-Warming-Invitation-Card (1).pdf"  
+# # pdf_input_path = "dummy_10_pages.pdf"
+# output_directory = "output_files"
+# os.makedirs(output_directory, exist_ok=True)
+
+
+# rows = []
+# with open(csv_file_path, 'r') as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+#     for row in csv_reader:
+#         rows.append(row)
+
+# def normalize_coordinates(x_scaled, y_scaled, scaled_width, scaled_height, original_width, original_height, standard_width=800, standard_height=600):
+#     x_standard = (x_scaled / scaled_width) * standard_width
+#     y_standard = (y_scaled / scaled_height) * standard_height
+#     x_original = (x_standard / standard_width) * original_width
+#     y_original = (y_standard / standard_height) * original_height
+#     return x_original, y_original
+
+# def create_subset_pdf(input_pdf, pages_to_include):
+#     reader = PdfReader(input_pdf)
+#     writer = PdfWriter()
+#     for page_number in pages_to_include:
+#         if 1 <= page_number <= len(reader.pages):
+#             writer.add_page(reader.pages[page_number - 1])
+#     subset_pdf_path = io.BytesIO()
+#     writer.write(subset_pdf_path)
+#     subset_pdf_path.seek(0)
+#     return subset_pdf_path
+
+# def create_overlay_pdf(text_positions, original_width, original_height, scaled_width, scaled_height):
+#     packet = io.BytesIO()
+#     can = canvas.Canvas(packet, pagesize=(original_width, original_height))
+#     can.setFillColor(white)
+#     can.setFont('Helvetica', 40)
+
+#     for item in text_positions:
+#         x_original, y_original = normalize_coordinates(
+#             item['x'], item['y'], scaled_width, scaled_height, original_width, original_height
+#         )
+#         can.drawString(x_original, original_height - y_original, item['text'])
+#     can.save()
+#     packet.seek(0)
+#     return packet
+
+# def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions, scaled_width, scaled_height): # Added scaled width and height
+#     reader = PdfReader(input_pdf_path)
+#     writer = PdfWriter()
+#     grouped_positions = {}
+#     for item in text_positions:
+#         page_number = item['pageNumber'] - 1
+#         if page_number not in grouped_positions:
+#             grouped_positions[page_number] = []
+#         grouped_positions[page_number].append(item)
+
+#     with pdfplumber.open(input_pdf_path) as pdf:
+#         for page_number in range(len(reader.pages)):
+#             page = reader.pages[page_number]
+#             pdf_page = pdf.pages[page_number]
+#             page_width = pdf_page.width
+#             page_height = pdf_page.height
+
+#             if page_number in grouped_positions:
+#                 overlay_pdf_stream = create_overlay_pdf(
+#                     grouped_positions[page_number], page_width, page_height, scaled_width, scaled_height  # Pass scaled dimensions
+#                 )
+#                 overlay_pdf = PdfReader(overlay_pdf_stream)
+#                 overlay_page = overlay_pdf.pages[0]
+#                 page.merge_page(overlay_page)
+#             writer.add_page(page)
+
+#     with open(output_pdf_path, "wb") as output_file:
+#         writer.write(output_file)
+
+# for idx, row in enumerate(rows):
+#     cleaned_row = {key.strip(): value for key, value in row.items()}
+#     pages = cleaned_row.get('Pages', '')
+#     if pages:
+#         pages_to_include = [int(page.strip()) for page in pages.split(',') if page.strip().isdigit()]
+#     else:
+#         with pdfplumber.open(pdf_input_path) as pdf:
+#             pages_to_include = list(range(1, len(pdf.pages) + 1))
+
+#     subset_pdf = create_subset_pdf(pdf_input_path, pages_to_include)
+#     filtered_tags = [tag.copy() for tag in json_data if tag["pageNumber"] in pages_to_include]
+
+#     for tag in filtered_tags:
+#         tag_text = tag["text"]
+#         tag["text"] = cleaned_row.get(tag_text, "")
+
+
+#     scaled_width = 800  
+#     scaled_height = 1100 
+
+#     output_pdf_path = os.path.join(output_directory, f"output_file_{idx + 1}.pdf")
+#     add_text_to_pdf(subset_pdf, output_pdf_path, filtered_tags, scaled_width, scaled_height) # Pass scaled dimensions
+
+# print(f"Tagged PDFs saved in directory: {output_directory}")
+
+
+
+
+
+
+
+
+
 import pdfplumber
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
@@ -342,15 +464,14 @@ import os
 from reportlab.lib.units import inch
 from reportlab.lib.colors import white, black
 
-# Sample data (replace with your actual data)
 json_data = [
-    {"pageNumber": 1, "x": 296, "y": 117, "text": "Tag 1"},  
+    {"pageNumber": 1, "x": 613, "y": 1099, "text": "Tag 1"},  
 ]
 csv_file_path = "New Csv Format - Sheet1.csv"
 pdf_input_path = "House-Warming-Invitation-Card (1).pdf"  
+# pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 os.makedirs(output_directory, exist_ok=True)
-
 
 rows = []
 with open(csv_file_path, 'r') as csv_file:
@@ -380,13 +501,15 @@ def create_overlay_pdf(text_positions, original_width, original_height, scaled_w
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=(original_width, original_height))
     can.setFillColor(white)
-    can.setFont('Helvetica', 35)
+    can.setFont('Helvetica', 40)
 
     for item in text_positions:
         x_original, y_original = normalize_coordinates(
             item['x'], item['y'], scaled_width, scaled_height, original_width, original_height
         )
-        can.drawString(x_original, original_height - y_original, item['text'])
+        # Adjust y-coordinate to account for the coordinate system difference
+        y_original_corrected = original_height - y_original
+        can.drawString(x_original, y_original_corrected, item['text'])
     can.save()
     packet.seek(0)
     return packet
@@ -436,9 +559,8 @@ for idx, row in enumerate(rows):
         tag_text = tag["text"]
         tag["text"] = cleaned_row.get(tag_text, "")
 
-    # *** Get Scaled Width and Height from Frontend here! ***
-    scaled_width = 800  # Replace with actual value from frontend
-    scaled_height = 1100 # Replace with actual value from frontend
+    scaled_width = 800  
+    scaled_height = 1100 
 
     output_pdf_path = os.path.join(output_directory, f"output_file_{idx + 1}.pdf")
     add_text_to_pdf(subset_pdf, output_pdf_path, filtered_tags, scaled_width, scaled_height) # Pass scaled dimensions
