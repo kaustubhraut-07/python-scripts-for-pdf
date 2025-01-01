@@ -104,7 +104,7 @@
 import pdfplumber
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.colors import white
+from reportlab.lib.colors import white,black
 from pypdf import PdfWriter, PdfReader
 import io
 import json
@@ -116,13 +116,14 @@ def create_overlay_pdf(text_positions):
     :return: BytesIO object of the overlay PDF.
     """
     packet = io.BytesIO()
-    can = canvas.Canvas(packet, pagesize=A4)
+    can = canvas.Canvas(packet, pagesize=A4, bottomup=0)
     can.setFillColor(white)
-    can.setFont('Helvetica', 40)  
+    can.setFont('Helvetica', 50)  
+    print(A4[1], "A4 size" , A4[0], "A4 size")
 
     for item in text_positions:
         x, y, text = item['x'], item['y'], item['text']
-        adjusted_y = A4[1] - y  # Adjust for A4 height
+        adjusted_y =   A4[1] -y # Adjust for A4 height
         print(f"Drawing text '{text}' at (x: {x}, y: {adjusted_y}) on A4 size")
         can.drawString(x, adjusted_y, text)
     
@@ -170,12 +171,15 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
 
 # Example usage
 input_pdf_path = "House-Warming-Invitation-Card (1).pdf"
+# input_pdf_path = "sample.pdf"
+# input_pdf_path = "dummy_10_pages.pdf"
 output_pdf_path = "outputhousewarming_a4.pdf"
 
 # JSON input defining positions on an A4 page
+# 200,120
 json_input = '''
 [
-    {"page": 1, "x": 200, "y": 120, "text": "Test 1234"}
+    {"page": 1, "x": 0, "y": 0, "text": "Test 1234"}
 ]
 '''
 text_positions = json.loads(json_input)
