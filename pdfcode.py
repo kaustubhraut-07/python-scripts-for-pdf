@@ -48,7 +48,9 @@ def read_csv(file_path):
                     continue
     return text_positions
 
-csv_content = read_csv('updated-content.csv')
+# csv_content = read_csv('updated-content.csv')
+
+csv_content = read_csv('New Csv Format - Sheet1.csv')
 print(csv_content, "csv file data")
 
 def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
@@ -103,13 +105,14 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
 
 
 # Example usage
-input_pdf_path = "sample.pdf"
-output_pdf_path = "output.pdf"
+# input_pdf_path = "sample.pdf"
+input_pdf_path = "House-Warming-Invitation-Card (1).pdf"
+output_pdf_path = "outputhousewarmingparty.pdf"
 
 # JSON input from the frontend
 json_input = '''
 [
-  {"page": 1, "x": 100, "y": 200},
+  {"page": 1, "x":200 , "y": 120},
   {"page": 1, "x": 150, "y": 400},
   {"page": 1, "x": 150, "y": 500},
   {"page": 2, "x": 150, "y": 600},
