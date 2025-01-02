@@ -117,15 +117,18 @@ def create_overlay_pdf(text_positions):
     """
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=A4, bottomup=0)
-    can.setFillColor(white)
+    can.setFillColor(black)
     can.setFont('Helvetica', 50)  
     print(A4[1], "A4 size" , A4[0], "A4 size")
 
     for item in text_positions:
         x, y, text = item['x'], item['y'], item['text']
-        adjusted_y =   A4[1] -y # Adjust for A4 height
+        adjusted_x = A4[0] - x
+        adjusted_y = A4[1] -  y 
         print(f"Drawing text '{text}' at (x: {x}, y: {adjusted_y}) on A4 size")
         can.drawString(x, adjusted_y, text)
+        packet.seek(0) 
+
     
     can.save()
     packet.seek(0)
@@ -142,10 +145,10 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
     reader = PdfReader(input_pdf_path)
     writer = PdfWriter()
     
-    # Group positions by page for easy processing
+    
     grouped_positions = {}
     for item in text_positions:
-        page_number = item['page'] - 1  # Convert to 0-based index
+        page_number = item['page'] - 1  
         if page_number not in grouped_positions:
             grouped_positions[page_number] = []
         grouped_positions[page_number].append(item)
@@ -154,32 +157,31 @@ def add_text_to_pdf(input_pdf_path, output_pdf_path, text_positions):
         page = reader.pages[page_number]
         
         if page_number in grouped_positions:
-            # Create overlay with text for the current page
+            
             overlay_pdf_stream = create_overlay_pdf(grouped_positions[page_number])
             overlay_pdf = PdfReader(overlay_pdf_stream)
             overlay_page = overlay_pdf.pages[0]
             
-            # Merge overlay with original page
+            
             page.merge_page(overlay_page)
         
-        # Add the updated page to the writer
+      
         writer.add_page(page)
     
-    # Save the final PDF
+    
     with open(output_pdf_path, "wb") as output_file:
         writer.write(output_file)
 
-# Example usage
-input_pdf_path = "House-Warming-Invitation-Card (1).pdf"
-# input_pdf_path = "sample.pdf"
+
+# input_pdf_path = "House-Warming-Invitation-Card (1).pdf"
+input_pdf_path = "sample.pdf"
 # input_pdf_path = "dummy_10_pages.pdf"
 output_pdf_path = "outputhousewarming_a4.pdf"
 
-# JSON input defining positions on an A4 page
-# 200,120
+
 json_input = '''
 [
-    {"page": 1, "x": 0, "y": 0, "text": "Test 1234"}
+    {"page": 1, "x": 200, "y": 800, "text": "Test 1234"}
 ]
 '''
 text_positions = json.loads(json_input)
