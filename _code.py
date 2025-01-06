@@ -710,6 +710,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.colors import white, black
 from reportlab.lib.pagesizes import A4
 
+
 json_data = [
     # {"pageNumber": 1, "x": 244.17864999999995, "y": 349, "text": "Tag 1"},  
     {"pageNumber": 1, "x": 101, "y": 46, "text": "Tag 1"},
@@ -722,8 +723,9 @@ json_data = [
 ]
 csv_file_path = "New Csv Format - Sheet1.csv"
 # pdf_input_path = "House-Warming-Invitation-Card (1).pdf" 
-# pdf_input_path = "A4size_House-Warming-Invitation-Card.pdf" 
-pdf_input_path = "sample.pdf"  
+pdf_input_path = "A4size_House-Warming-Invitation-Card.pdf" 
+# pdf_input_path = "sample.pdf"  
+# pdf_input_path ="invitaioncard.pdf"
 # pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 os.makedirs(output_directory, exist_ok=True)
@@ -741,6 +743,8 @@ with open(csv_file_path, 'r') as csv_file:
 #     y_original = (y_standard / standard_height) * original_height
 #     return x_original, y_original
 
+
+
 def create_subset_pdf(input_pdf, pages_to_include):
     reader = PdfReader(input_pdf)
     writer = PdfWriter()
@@ -752,13 +756,21 @@ def create_subset_pdf(input_pdf, pages_to_include):
     subset_pdf_path.seek(0)
     return subset_pdf_path
 
+
+
+
+
+
+
+
+
 def create_overlay_pdf(text_positions, page_width, page_height):
     """
     Create an overlay PDF with text at specified positions.
     """
     packet = io.BytesIO()
     can = canvas.Canvas(packet, pagesize=A4)
-    can.setFillColor(black)
+    can.setFillColor(white)
 
     for item in text_positions:
         x, y, text = item['x'], item['y'], item['text']
@@ -796,18 +808,22 @@ def add_text_to_pdf(input_pdf_stream, output_pdf_path, text_positions):
             grouped_positions[page_number] = []
         grouped_positions[page_number].append(item)
 
+    page_width = 595.2755905511812
+    page_height = 841.8897637795277
+
     with pdfplumber.open(input_pdf_stream) as pdf:
         for page_number in range(len(reader.pages)):
             page = reader.pages[page_number]
             pdf_page = pdf.pages[page_number]  # Get page size from pdfplumber
 
-            page_width = pdf_page.width
-            page_height = pdf_page.height
+            # page_width = pdf_page.width
+            # page_height = pdf_page.height
             # page_width = 595.2755905511812
             # page_height = 841.8897637795277
 
             if page_number in grouped_positions:
                 # Create overlay with reportlab
+                print(page_width , page_height , "page width and height")
                 overlay_pdf_stream = create_overlay_pdf(
                     grouped_positions[page_number], page_width, page_height
                 )
@@ -822,6 +838,46 @@ def add_text_to_pdf(input_pdf_stream, output_pdf_path, text_positions):
 
     with open(output_pdf_path, "wb") as output_file:
         writer.write(output_file)
+
+
+
+
+# def add_text_to_pdf(input_pdf_stream, output_pdf_path, text_positions):
+#     """Add text to specific positions in a PDF, ensuring A4 output."""
+#     reader = PdfReader(input_pdf_stream)
+#     writer = PdfWriter()
+
+#     grouped_positions = {}
+#     for item in text_positions:
+#         page_number = item['pageNumber'] - 1
+#         if page_number not in grouped_positions:
+#             grouped_positions[page_number] = []
+#         grouped_positions[page_number].append(item)
+
+#     with pdfplumber.open(input_pdf_stream) as pdf:
+#         for page_number in range(len(reader.pages)):
+#             page = reader.pages[page_number]
+#             pdf_page = pdf.pages[page_number]
+
+#             page_width = pdf_page.width
+#             page_height = pdf_page.height
+
+#             # Resize to A4 if necessary using scale_to
+#             if round(page_width) != round(A4[0]) or round(page_height) != round(A4[1]):
+#                 page.scale_to(A4[0], A4[1])
+
+#             if page_number in grouped_positions:
+#                 overlay_pdf_stream = create_overlay_pdf(
+#                     grouped_positions[page_number], page_width, page_height
+#                 )
+#                 overlay_pdf = PdfReader(overlay_pdf_stream)
+#                 overlay_page = overlay_pdf.pages[0]
+#                 page.merge_page(overlay_page)
+
+#             writer.add_page(page)
+
+#     with open(output_pdf_path, "wb") as output_file:
+#         writer.write(output_file)
 
 for idx, row in enumerate(rows):
     cleaned_row = {key.strip(): value for key, value in row.items()}
@@ -841,8 +897,8 @@ for idx, row in enumerate(rows):
 
     scaled_width =   595.2755905511812
     scaled_height =  841.8897637795277
-    print(filtered_tags, "filtered tags")
+    # print(filtered_tags, "filtered tags")
     output_pdf_path = os.path.join(output_directory, f"output_file_{idx + 1}.pdf")
     add_text_to_pdf(subset_pdf, output_pdf_path, filtered_tags)  # Pass scaled dimensions
 
-print(f"Tagged PDFs saved in directory: {output_directory}")
+print(f"Tagged PDFs saved in directory: {output_directory}")  
