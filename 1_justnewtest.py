@@ -465,10 +465,11 @@ from reportlab.lib.units import inch
 from reportlab.lib.colors import white, black
 
 json_data = [
-    {"pageNumber": 1, "x": 613, "y": 1099, "text": "Tag 1"},  
+    {"pageNumber": 1, "x": 244.17864999999995, "y": 349, "text": "Tag 1"},  
 ]
 csv_file_path = "New Csv Format - Sheet1.csv"
-pdf_input_path = "House-Warming-Invitation-Card (1).pdf"  
+# pdf_input_path = "House-Warming-Invitation-Card (1).pdf"  
+pdf_input_path = "sample.pdf"  
 # pdf_input_path = "dummy_10_pages.pdf"
 output_directory = "output_files"
 os.makedirs(output_directory, exist_ok=True)
