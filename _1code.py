@@ -45,7 +45,7 @@ def resize_pdf_to_a4(input_pdf_path, output_pdf_path):
         scale_y = a4_height / page_height
         scale = min(scale_x, scale_y)
 
-        page.scale(scale, scale)  # Scale the page proportionally
+        page.scale(scale, scale)  
         page.mediabox.upper_right = (a4_width, a4_height)  # Set new page size
 
         writer.add_page(page)
